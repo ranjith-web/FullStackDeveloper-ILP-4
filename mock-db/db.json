@@ -1,0 +1,20 @@
+{
+  "issueTracker": [
+    {
+      "description": "Test for 5",
+      "severity": "Critical",
+      "status": "Closed",
+      "created_date": "2018-11-11T18:30:00.000Z",
+      "resolved_date": "2018-11-07T18:30:00.000Z",
+      "id": 3
+    },
+    {
+      "severity": "Minor",
+      "description": "Test for trial",
+      "status": "Open",
+      "created_date": "2018-12-19T18:30:00.000Z",
+      "resolved_date": "2018-12-27T18:30:00.000Z",
+      "id": 4
+    }
+  ]
+}
