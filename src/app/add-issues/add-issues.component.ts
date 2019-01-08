@@ -33,15 +33,14 @@ export class AddIssuesComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.paramsId = params.get("id");
+      this.paramsId = params.get("_id");
       if(this.paramsId){
         this.issueTrackerService.issuesLists.subscribe(res => {
           if(res.length > 0){
             this.editOrAddButtonDisplay = true;
             const editIssues = res.filter(item => {
-              return item.id == this.paramsId;
+              return item['_id'] == this.paramsId;
             });
-            
             this.model = {
               severity: editIssues[0].severity,
               description: editIssues[0].description,

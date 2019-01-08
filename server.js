@@ -1,19 +1,25 @@
 var createError = require('http-errors');
 var express = require('express');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 var path = require('path');
 var http = require('http');
 
-var indexRouter = require('./server/routes/index');
-
 var app = express();
 
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'html');
 
-app.use(bodyParser.json());
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/issuetracker');
+
+var indexRouter = require('./server/routes/index');
+
+//view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
+
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.json({type: 'application/*+json'}));
 
 app.use(express.static(path.join(__dirname, 'dist/issue-tracker')));
 

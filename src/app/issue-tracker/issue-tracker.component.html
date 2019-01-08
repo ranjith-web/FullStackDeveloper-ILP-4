@@ -56,7 +56,7 @@
       <ng-container matColumnDef="action">
         <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
         <mat-cell *matCellDef="let issues"> 
-          <span class="action-icons" (click)="updateIssue(issues.id)">
+          <span class="action-icons" (click)="updateIssue(issues._id)">
               <i class="fa fa-edit"></i>
           </span>
         </mat-cell>

@@ -57,7 +57,7 @@ const routes: Routes = [
     component: AddIssuesComponent,
   },
   {
-    path: 'edit-issues/:id',
+    path: 'edit-issues/:_id',
     component: AddIssuesComponent,
   }
 ];

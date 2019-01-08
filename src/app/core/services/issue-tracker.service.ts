@@ -51,9 +51,9 @@ export class IssueTrackerService {
   }
 
   updateIssues (_id,issue): Observable<any> {
-    issue.id = _id;
+    issue['_id'] = _id;
     return this.http
-    .post(this.updateIssuesUrl, issue)
+    .put(this.updateIssuesUrl, issue)
     .pipe(
       map(response => {
         this.store.dispatch(
@@ -61,7 +61,7 @@ export class IssueTrackerService {
             type:"UPDATE_ISSUE", 
             payload:
               {
-                id: _id,
+                _id: _id,
                 data: issue
               }
           })
@@ -80,7 +80,7 @@ export class IssueTrackerService {
             type:"DELETE_ISSUE", 
             payload:
               {
-                id: _id
+                _id: _id
               }
             }
           )
